@@ -1,0 +1,63 @@
+1. const sayBye = (name) => {
+    return "bye" + name;
+}
+
+const sayBye = name => "bye" + name;
+
+
+2.
+ let x = a =>{
+    console.log(this)
+    return a+1;
+}
+let y = b =>{
+    console.log(this)
+    return b+1;
+}
+3. 
+const person = {
+    fname : 'bob1',
+    lname: "alex1",
+    fullName : function() {
+             return this.fname + " " + this.lname;
+            }
+}
+
+const full1 = person.fullName.bind(person);
+console.log(full1()) ;
+
+// const full2 = person.fullName;
+//  console.log(full2())// undefined undefined 
+
+const person2 = {
+    fname : 'bob',
+    lname: "alex",
+   fullName(){
+      let result= ()=> console.log(this.fname + " " + this.lname)
+        result()
+   }          
+}
+const full = person2.fullName();
+
+
+Research 
+1. how to use arrow function in ES6, how to use Destructuring in ES6 and how to implement class Constructor in ES6
+
+2. arrow function is introduced in ES6 allow as to write shorter function syntax and this value inside a regular function is dynamic and depends on the invocation. But this inside the arrow function is bound lexically and equals to this of the outer function. 
+
+3 
+props:
+    ==> Arrow syntax automatically binds this to the surrounding code's context. 
+    ==> The syntax allows an implicit return when there is no body block
+    ==> resulting in shorter and simpler code in some cases.
+cons: 
+    ==>Don't work with new and cannot be used when creating prototype.
+    ==> Fixed this bound to scope at initialisation.
+
+4. 
+Spread Operator:
+Used to split up array elements or object properties.
+So we can expand, copy an array.
+
+Rest operator:
+The rest operator (…) allows us to call a function with any number of arguments and then access those excess arguments as an array. The rest operator also allows us in destructuring array or objects. 

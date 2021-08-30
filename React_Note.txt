@@ -1,0 +1,12 @@
+React 
+let/const 
+let==> is a signal that the variable may be reassigned
+const ==> is a signal that the identifier won’t be reassigned
+Component: 
+
+export ==> use {} to import 
+    ==> name must be same 
+    ==> muiltiple export allowed 
+    
+export defult => with out {} to import 
+    ==> and only one allowed in one file 
