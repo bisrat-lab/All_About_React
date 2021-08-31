@@ -9,10 +9,12 @@ function App() {
       "This is my first react "
     ),
     React.createElement('div',{className:"list"},
-      React.createElement('ul',{},
-        React.createElement('li',{},"list-1"),
+      React.createElement('ul',{},[
+          React.createElement('li',{},"list-1"),
         React.createElement('li',{},"list-2"),
         React.createElement('li',{},"list-3")
+      ]
+        
       )
     )
   );
