@@ -19,7 +19,7 @@ Component:
 modules to export live bindings to functions, objects, or
 primitive values from the module so they can be used by
 other programs
-there are 2 types 
+there are 2 types named Export and default Export
 export ==> use {} to import 
     ==> name must be same when importing 
     ==> muiltiple export allowed 
@@ -41,5 +41,24 @@ React.creatingElement takes three parameter
  return creatingElement('div',{className: "app"},"welcome") 
 
  ==> jsx 
+ => Your browser doesn't understand JSX by default. Your browser only understands JavaScript. 
+    - Babel ultimately converts it to vanilla JS for the browser to understand it 
    * It is used to write an XML like code for elements and components 
    * JSX allows us to write HTML elements in JavaScript
+
+React Components-------------
+Building blocks of react app
+->Components let you split the UI into independent, reusable pieces.
+
+Class-Based Component
+•Inherits from React.Component
+•Should override render() method
+•Aka containers, smart, stateful
+
+Functional Components
+•Purely presentational
+•Represented by a function
+•Returns React element
+•Aka stateless, dumb, presentational
+•90% cleaner code than class components.
+•Class components are more complex. 
