@@ -2,11 +2,44 @@ React
 let/const 
 let==> is a signal that the variable may be reassigned
 const ==> is a signal that the identifier won’t be reassigned
+
+Arrow Functions:
+Arrow syntax automatically binds this to the surrounding code's context. 
+    ==> The syntax allows an implicit return when there is no body block
+    ==> resulting in shorter and simpler code in some cases
+
+==> this in Arrow Functions
+==> they did not rebind this 
+    There are no binding of this
+    ==>this keyword in arrow functions always represents the object that defined the arrow function
 Component: 
 
+
+==>Exports statement is used when creating JavaScript
+modules to export live bindings to functions, objects, or
+primitive values from the module so they can be used by
+other programs
+there are 2 types 
 export ==> use {} to import 
-    ==> name must be same 
+    ==> name must be same when importing 
     ==> muiltiple export allowed 
     
 export defult => with out {} to import 
     ==> and only one allowed in one file 
+
+==>Import statement is used to import bindings that are exported by another module
+
+*********************************************************
+React 
+==> React is a JavaScript library for building user unterface 
+----------------------------------
+React.creatingElement takes three parameter 
+ React.createElement(type, [props], [...children]);
+1. the element('div','h1','p')
+2. the option properties object{}
+3. our children
+ return creatingElement('div',{className: "app"},"welcome") 
+
+ ==> jsx 
+   * It is used to write an XML like code for elements and components 
+   * JSX allows us to write HTML elements in JavaScript
