@@ -96,18 +96,18 @@ import Columns from './Columns'
 //   )
 // }
 
-export default App;
+//export default App;
 
 //6a 
-class App extends Component{
-  render(){
-    return(
-      <div>
-        <h2>Class based</h2>
-      </div>
-    )
-  }
-}
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <h2>Class based</h2>
+//       </div>
+//     )
+//   }
+// }
 //6b
 
 function App (){
@@ -117,4 +117,4 @@ function App (){
     </div>
   )
 }
-
+export default App;

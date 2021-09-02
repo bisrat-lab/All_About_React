@@ -59,6 +59,32 @@ Functional Components
 •Purely presentational
 •Represented by a function
 •Returns React element
-•Aka stateless, dumb, presentational
+•stateless, dumb, presentational
 •90% cleaner code than class components.
 •Class components are more complex. 
+
+=======================================================
+Props ans state 
+-------------------------------------------------------
+● Props is what makes us to be able to create reusable components
+● Props are arguments passed to components
+● Can be used to pass data from the parent component to child components. (One way, parent -> child)
+● They are passed via HTML attributes
+● Props are read-only!
+
+==>Children Prop
+contains any child elements defined within the component.
+
+==>State is a JavaScript object that holds and maintains data for a component
+The main difference between props and States is that: 
+			
+			- Props get passed to the component 
+				- Just like parameters in a function
+				- props should NOT be changed by the component receiving the props 
+					- It can be done technically. But it is prone to error   
+
+			- State is managed within the component itself 
+				- Just like variables in a function
+				- states can be changed by the component  
+==> State is used when we want to keep track of information during multiple renderings of a component 
+==> To change a value in the state object, always use the this.setState() method!
