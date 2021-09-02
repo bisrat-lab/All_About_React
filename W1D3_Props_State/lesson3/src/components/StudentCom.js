@@ -8,20 +8,22 @@ export class StudentCom extends Component {
         ]
     }
     makeOlder = () =>{
-        this.setState({
-            students: [
-                { name: 'Alice', age: this.state.students[0].age +1 },
-                { name: 'Bob', age: this.state.students[1].age +1}
-                ]
+        let result = this.state.students.map(s=>{
+            return {
+                name : s.name,
+                age : s.age +1
+            }
         })
+        this.setState({students:result})
     }
     makeYounger=()=>{
-        this.setState({
-            students: [
-                { name: 'Alice', age: this.state.students[0].age -1 },
-                { name: 'Bob', age: this.state.students[1].age -1}
-                ]
+        let result = this.state.students.map(s=>{
+            return {
+                name: s.name,
+                age : s.age - 1
+            }
         })
+        this.setState({students: result})
     }
     render() {
         return (
