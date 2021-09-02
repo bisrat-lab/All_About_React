@@ -16,14 +16,18 @@ export class StudentCom extends Component {
         })
         this.setState({students:result})
     }
-    makeYounger=()=>{
-        let result = this.state.students.map(s=>{
+    makeYounger=(result)=>{
+     result = this.state.students.map(s=>{
             return {
                 name: s.name,
                 age : s.age - 1
             }
         })
-        this.setState({students: result})
+        this.setState((state)=>{
+            return {
+                students: result
+            }
+        })
     }
     render() {
         return (
