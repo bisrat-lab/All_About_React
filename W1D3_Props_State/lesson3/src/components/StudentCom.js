@@ -45,10 +45,7 @@ export class StudentCom extends Component {
                     />
                  
                   return studentList;
-                })}
-                {/* <button
-                onClick ={this.makeOlder}
-                >Increment age</button> */}
+                })}  
             </div>
         )
     }
