@@ -3,49 +3,52 @@ import Student from './Student'
 export class StudentCom extends Component {
     state = {
         students : [
-            {name:'Alice', age:20},
-            {name:'Bob', age:19}
+            {id : 1,name:'Alice', age:20},
+            {id: 2, name:'Bob', age:19}
         ]
     }
-    makeOlder = () =>{
+  
+    makeOlder = (stuId) =>{
         let result = this.state.students.map(s=>{
-            return {
-                name : s.name,
-                age : s.age +1
+            if(s.id === stuId){
+                let copy = {...s}
+                copy.age = copy.age +1;
+                return copy;
             }
+            return s;
         })
         this.setState({students:result})
     }
-    makeYounger=(result)=>{
-     result = this.state.students.map(s=>{
-            return {
-                name: s.name,
-                age : s.age - 1
-            }
-        })
-        this.setState((state)=>{
-            return {
-                students: result
-            }
-        })
+    makeYounger=(stuId)=>{
+     let result = this.state.students.map((s) => {
+         if(s.id === stuId){
+             let copy = {...s};
+             copy.age = copy.age -1;
+             return copy;
+         }
+         return s;
+        } )
+     this.setState({students:result})
     }
+  
     render() {
         return (
             <div>
                 {this.state.students.map(st =>{
                  let studentList = 
                     <Student 
-                        key = {st.name}
+                        key = {st.id}
                         name = {st.name}
                         age = {st.age}
-                        dec = {this.makeYounger}
+                        dec = {()=>this.makeYounger(st.id)}
+                        inc ={()=> this.makeOlder(st.id)}
                     />
                  
                   return studentList;
                 })}
-                <button
+                {/* <button
                 onClick ={this.makeOlder}
-                >Increment age</button>
+                >Increment age</button> */}
             </div>
         )
     }
