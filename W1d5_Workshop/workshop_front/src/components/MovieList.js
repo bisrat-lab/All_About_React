@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./movielist.css"
+import Tog from "./tog"
 
 export class MovieList extends Component {
     render() {
@@ -15,7 +16,8 @@ export class MovieList extends Component {
                     <input></input>
                     <p>{this.props.rating}</p>
                     <input></input>
-                    <span>{this.props.info}</span>
+                    <Tog info ="bbbbbbb"/>
+                    <span>{this.props.d}</span>
                     <div>
                         <button onClick={this.props.deleteEvent}>Delet</button>
                          <button onClick={this.props.infoEvent}>info</button>
