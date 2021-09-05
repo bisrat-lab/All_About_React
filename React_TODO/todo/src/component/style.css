@@ -1,10 +1,12 @@
+
 .card{
     border: solid;
-    float: right;
+    float: left;
   width: 25%;
   padding: 10px;
   margin: 20px;
 }
-.pad {
+
+.space {
     padding: 10px;
 }
