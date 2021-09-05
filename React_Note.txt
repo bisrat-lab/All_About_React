@@ -12,7 +12,7 @@ Arrow syntax automatically binds this to the surrounding code's context.
 ==> they did not rebind this 
     There are no binding of this
     ==>this keyword in arrow functions always represents the object that defined the arrow function
-Component: 
+
 
 
 ==>Exports statement is used when creating JavaScript
@@ -90,4 +90,4 @@ The main difference between props and States is that:
 ==> To change a value in the state object, always use the this.setState() method!
 
 why we use state 
-when we use setState to change react will render the satate only. 
+when we use setState to change the state react will render the state only. 

@@ -1,0 +1,12 @@
+
+.card{
+    border: solid;
+    float: left;
+  width: 25%;
+  padding: 10px;
+  margin: 20px;
+}
+
+.space {
+    padding: 10px;
+}
