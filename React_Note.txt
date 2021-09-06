@@ -89,5 +89,5 @@ The main difference between props and States is that:
 ==> State is used when we want to keep track of information during multiple renderings of a component 
 ==> To change a value in the state object, always use the this.setState() method!
 
-why we use state 
-when we use setState to change the state react will render the state only. 
+why we use state if we did not use state react can not rerender the component
+when we use setState to change the some state value react will rerender the compnent and we can see the change 

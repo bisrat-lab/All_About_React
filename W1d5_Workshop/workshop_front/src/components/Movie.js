@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import MovieList from "./MovieList";
 import CreateMovie from "./CreateMovie";
 import "./movielist.css";
-import Tog  from "./tog"
+import Tog  from "./tog";
+import UpadteMovie from "./UpadteMovie";
+
 export class Movie extends Component {
   state = {
     movies: [
@@ -24,6 +26,14 @@ export class Movie extends Component {
       genras: "x",
       rating: 0,
     },
+    showUpdateForm :false,
+    updatedMovie :{
+        id: 3,
+        name: "",
+        rating: "",
+        genras: "",
+        dis: "",
+    }
   };
 
   infoHandler = (movieId) => {
@@ -75,14 +85,61 @@ export class Movie extends Component {
     this.setState({ movies: this.state.movies.concat(this.state.newMovie) });
     console.log(this.state.newMovie);
   };
+
+  updateBtnHandler =(id)=>{
+    this.setState({showUpdateForm: !this.state.showUpdateForm})
+    let result = this.state.movies.find(m=>m.id=== id)
+    let copy = this.state.updatedMovie;
+    copy.name = result.name;
+    copy.rating = result.rating
+    copy.genras = result.genras
+    this.setState({updatedMovie : copy})
+    console.log(result)
+  }
+  nameUpdated =(e)=>{
+    let copy = {...this.state.updatedMovie}
+    copy.name = e.target.value
+    this.setState({updatedMovie: copy})
+  }
+  ratingUpdater=(e)=>{
+    let copy = {...this.state.updatedMovie}
+    copy.rating = e.target.value
+    this.setState({updatedMovie : copy})
+
+  }
+
+  applyBtnHandler =()=>{
+    let id = this.state.updatedMovie.id
+    let result = this.state.movies.filter(m=>m.id !== id) 
+     console.log(result)
+    result.push(this.state.updatedMovie)
   
+     this.setState({movies: result})
+     this.setState({showUpdateForm: !this.state.showUpdateForm})
+  }
 
   render() {
-   
+      let showUpdateForm1 = null
+      if(this.state.showUpdateForm){
+        showUpdateForm1 =(
+          <div className="card">
+             <UpadteMovie
+             name= {this.state.updatedMovie.name}
+             rating = {this.state.updatedMovie.rating}
+             
+                 nameUpdateHandler= {(e)=>this.nameUpdated(e)}
+                 ratingUpdateHandler ={(e)=>this.ratingUpdater(e)}
+                 applyBtnEvent = {this.applyBtnHandler} 
+               />
+            </div>
+         
+        )
+      }
       let movieList = null;
       if (this.state.isInfo){ 
         movieList = <Tog
         dis = {this.state.discr}
+        
         />        
       }
      
@@ -108,14 +165,15 @@ export class Movie extends Component {
                 editNameEvent={(event) =>
                   this.changeNameHandler(movie.id, event)
                 }
+                updateEvent ={()=>this.updateBtnHandler(movie.id)}
               />
               
               </div>
             );
           })}
-          <div className="card">
+         
              {movieList} 
-          </div>
+          
       
         </div>
         <div>
@@ -129,6 +187,9 @@ export class Movie extends Component {
             addHandler={() => this.onSaveBtn()}
           />
         </div>
+        
+           {showUpdateForm1}
+       
       </div>
     );
   }

@@ -21,6 +21,7 @@ export class MovieList extends Component {
                     <div>
                         <button onClick={this.props.deleteEvent}>Delet</button>
                          <button onClick={this.props.infoEvent}>info</button>
+                         <button onClick={this.props.updateEvent}>update</button>
                     </div>
                 </div>
           
