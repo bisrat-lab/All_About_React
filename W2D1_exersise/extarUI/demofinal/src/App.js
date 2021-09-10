@@ -3,6 +3,7 @@ import './App.css';
 import React from "react"
 import Reminder from './Reminder';
 import NewReminder from './NewReminder';
+import UpdateForm from './UpdateForm';
 class App extends React.Component {
   state= {
     reminders : [
@@ -72,6 +73,30 @@ class App extends React.Component {
   }
 //! //!=========Update  Btn Handler END
 
+//! //!=========Edit  Btn Handler END
+editBthHandler =(id)=>{
+  let result = this.state.reminders.find(r => r.id === id)
+  let copy = {...this.state.updatReminde}
+  copy.id = result.id
+  copy.title = result.title
+  copy.des =result.des
+  this.setState({updatReminde:copy})
+  console.log(result)
+}
+
+titlerEditHandler =(e)=>{
+  let copy = {...this.state.updatReminde}
+  copy.title = e.target.value
+  this.setState({updatReminde :copy})
+}
+
+applyBtnHandler =()=>{
+ let result = this.state.reminders.filter(r=>r.id !==this.state.updatReminde.id)
+ result.push(this.state.updatReminde)
+ this.setState({reminders:result})
+}
+
+
   render(){
     return (
     <div className="App">
@@ -88,6 +113,7 @@ class App extends React.Component {
               titleUpdaterInput = {(e)=>this.titleInpurHandled(e)}
               decUpdaterInput ={(e) => this.decInputHandled(e)}
               updateEventBtn = {()=>this.updateBtnHandler(r.id)}
+              editEventBtn ={()=>this.editBthHandler(r.id)}
             />
           )
         })}
@@ -102,6 +128,13 @@ class App extends React.Component {
         titleInputHandler = {(e)=>this.titleInputHandled(e)}
         saveBtnEvent={this.saveBtnHandler}
         
+        />
+      </div>
+      <div>
+        <UpdateForm
+          title = {this.state.updatReminde.title}
+          titleEditer ={(e)=>this.titlerEditHandler(e)}
+          applyBtnEvent ={this.applyBtnHandler}
         />
       </div>
     </div>

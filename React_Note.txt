@@ -91,3 +91,20 @@ The main difference between props and States is that:
 
 why we use state if we did not use state react can not rerender the component
 when we use setState to change the some state value react will rerender the compnent and we can see the change 
+
+
+
+Mounting phase 
+constractor => render => did mount ==> render 
+componentDidMount() {
+          // Write you script in here if you want to do something right after the component is added on DOM
+          ==> ajax call 
+          setState
+        }
+componentDidUpdate() {
+          // Write you script in here if you want to do something right after the component is updated  
+        }
+
+componentWillUnmount() {
+          // Write you script in here if you want to do something right after the component is removed from DOM 
+}
