@@ -1,14 +1,16 @@
 import React from 'react'
+import './movielist.css'
 
 export default function MovieList(props) {
     return (
-        <div>
+        <div className= "card">
              <div>
                {props.name}
             </div>
             <div>
                {props.rating}
             </div>
+            <button onClick={props.onDeleteBtn}>Delete</button>
         </div>
     )
 }
