@@ -5,11 +5,12 @@ const jwt = require('jsonwebtoken');
 const accessTokenSecret = 'youraccesstokensecret';
 
 const users = [
-  {
+  {   id: 1,
       username: 'john',
       password: '123',
       role: 'admin'
   }, {
+    id: 2,
       username: 'bob',
       password: '456',
       role: 'member'
@@ -39,7 +40,7 @@ router.post('/register',(req,res)=>{
       username: req.body.username,
       password: req.body.password
   })
-  res.json({massage:"New movie created"})
+  res.json({massage:"New user created"})
 })
 /* GET users listing. */
 router.get('/', function(req, res, next) {

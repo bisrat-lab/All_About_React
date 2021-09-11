@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import MovieList from './MovieList'
 import CreateMovie from './CreateMovie'
 import axios from 'axios'
+import Login from './Login'
+import SignUp from './SignUp'
 
 export class Movie extends Component {
     state= {
@@ -48,6 +50,12 @@ export class Movie extends Component {
     render() {
         return (
             <div>
+                <div>
+                    <Login/>
+                </div>
+                <div>
+                    <SignUp/>
+                </div>
                 <div>
                   {
                       this.state.movies.map(m=>{
