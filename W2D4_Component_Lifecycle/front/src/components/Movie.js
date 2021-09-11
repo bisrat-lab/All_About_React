@@ -37,6 +37,14 @@ export class Movie extends Component {
         })
         this.setState({movies:this.state.movies.concat(this.state.newMovie)})
     }
+    delBtnHandler =(id)=>{
+        axios.delete(`http://localhost:2000/movies/${id}`)
+        .then(response => {
+            console.log(response)
+        })
+        // let result = this.state.movies.filter(m=>m.id !== id)
+        // this.setState({movies:result})
+    }
     render() {
         return (
             <div>

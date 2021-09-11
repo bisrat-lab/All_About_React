@@ -25,6 +25,7 @@ router.post('/',(req,res)=>{
 })
 
 router.put('/:id',(req,res)=>{
+
     let updatedIndex = movies.map(m=>m.id).indexOf(parseInt(req.params.id))
     
     if(updatedIndex !== -1){
@@ -40,7 +41,8 @@ router.put('/:id',(req,res)=>{
 })
 
 router.delete('/:id',(req,res)=>{
-    let index = movies.map(m=>m.id).indexOf(req.params.id)
+    let index = movies.map(m=>m.id).indexOf(parseInt(req.params.id))
+    console.log(req.params.id)
     if(index === -1){
         res.json({message: "Not Found"})
     }else{
