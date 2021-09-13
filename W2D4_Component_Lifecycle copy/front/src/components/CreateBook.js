@@ -1,16 +1,16 @@
 import React from "react";
 import axios from "axios";
 
-class CreateMovie extends React.Component{
+class CreateBook extends React.Component{
   state= {name:"",year:0, rating: 0}
 
   onSaveBtn=()=>{
-    let newMovieObj = {
+    let newBookObj = {
       name: this.state.name,
       year:this.state.year,
       rating: this.state.rating
     }
-    axios.post("http://localhost:2000/movies",newMovieObj,{
+    axios.post("http://localhost:2001/books",newBookObj,{
       headers : { 
         Authorization : `Bearer ${localStorage.getItem('accessToken')}`
       }
@@ -41,4 +41,4 @@ return (
   }
   
 }
-export default CreateMovie
+export default CreateBook

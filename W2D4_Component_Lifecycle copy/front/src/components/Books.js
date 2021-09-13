@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-import MovieList from './MovieList'
+import BookList from './BookList'
 import axios from 'axios'
 
-export class Movie extends Component {
+export class Books extends Component {
     state= {
-        movies : [],
+        books : [],
        
     }
     componentDidMount(){
-         axios.get("movies")
+         axios.get("http://localhost:2001/books")
          .then((response)=>{
              console.log(response.data)
-           this.setState({movies: response.data})
+           this.setState({books: response.data})
          })
     }
     
     delBtnHandler =(id)=>{
-        axios.delete(`movies/${id}`)
+        axios.delete(`http://localhost:2001/books/${id}`)
         .then(response => {
             console.log(response)
         })
@@ -28,8 +28,8 @@ export class Movie extends Component {
                 
                 <div>
                   {
-                      this.state.movies.map(m=>{
-                       return(  <MovieList
+                      this.state.books.map(m=>{
+                       return(  <BookList
                         key ={m.id}
                         name= {m.name}
                         rating = {m.rating}
@@ -45,4 +45,4 @@ export class Movie extends Component {
     }
 }
 
-export default Movie
+export default Books
