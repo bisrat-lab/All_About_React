@@ -1,0 +1,22 @@
+.card{
+    border: solid;
+    float: left;
+  width: 25%;
+  padding: 10px;
+  margin: 20px;
+  
+}
+.card2{
+  border-radius: 8px;
+  border: solid;  
+width: 45%;
+padding: 10px;
+margin-left: 40%;
+background-color:gainsboro 
+}
+
+.card3{
+  border:  1px solid; 
+  border-radius: 8px;
+  background-color:white
+}
