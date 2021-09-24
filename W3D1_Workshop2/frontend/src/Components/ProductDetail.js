@@ -40,8 +40,6 @@ export class ProductDetail extends Component {
           
           this.setState({newReview:{title:"",des:""}})
          })
-        
-
   }
 
   render() {

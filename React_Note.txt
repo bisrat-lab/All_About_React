@@ -96,6 +96,8 @@ when we use setState to change the some state value react will rerender the comp
 
 Mounting phase 
 constractor => render => did mount ==> render 
+
+
 componentDidMount() {
           // Write you script in here if you want to do something right after the component is added on DOM
           ==> ajax call 
@@ -108,3 +110,21 @@ componentDidUpdate() {
 componentWillUnmount() {
           // Write you script in here if you want to do something right after the component is removed from DOM 
 }
+
+
+Props drilling (threading) refers to the process of passing data from the parent component to the _exact _child component
+
+
+
+ Explain withRouter Higher Order Component briefly.
+  What is the use of a super keyword in React?
+  Describe Higher Order Components and 2 examples of advantages. 
+  What is create-react-app?
+  Explain ‘shouldComponentUpdate’ life cycle hook.
+   Why do we want to update the state immutably?
+   What is Pure Component? What is the difference between Pure Component and Component? 
+
+
+   A higher-order component 
+   if a component returns a component or if a componet takes another component as aparameter. 
+   used to : reusing logic in component 
