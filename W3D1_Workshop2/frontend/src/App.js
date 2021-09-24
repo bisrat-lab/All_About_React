@@ -1,67 +1,3 @@
-// import React from "react";
-// import { BrowserRouter, Route, Switch,Link } from "react-router-dom";
-
-// import "./App.css";
-// import CreateProduct from "./Components/CreateProduct";
-// import CreateReview from "./Components/CreateReview";
-// import Login from "./Components/Login";
-// import Navbar from "./Components/Navbar";
-// import ProductDetail from "./Components/ProductDetail";
-// import Products from "./Components/Products";
-// import Register from "./Components/Register";
-// import UpdateForm from "./Components/UpdateForm";
-
-// import {AuthContext} from './Components/userContext'
-
-// class App extends React.Component {
-//   state ={
-//     authState : false
-//   }
-
-//   render() {
-//     return (
-//       <AuthContext.Provider value={this.state.authState}>
-//         <BrowserRouter>
-//         <div>
-//         <ul>
-//           {this.state.isUserLoggedIn ? (
-//             <li>
-//               <Link to="/all-product">All Product</Link>
-//             </li>
-//           ) : null}
-//           {this.state.isUserLoggedIn ? (
-//             <li>
-//               <Link to="/create-product">Create Product</Link>
-//             </li>
-//           ) : null}
-
-//           <li>
-//             <Link to="/login">LogIn</Link>
-//           </li>
-//           <li>
-//             <Link to="/register">Register</Link>
-//           </li>
-//         </ul>
-//       </div>
-//           {/* <Navbar /> */}
-//           <div className="App container">
-//             <Route path="/all-product" component={Products} />
-//             <Route path="/login" component={Login} />
-//             <Route path="/register" component={Register} />
-
-//             <Route path="/create-product" component={CreateProduct} />
-//             <Route path="/update-product/:id" component={UpdateForm} />
-
-//             <Route path="/product/detail/:id" component={ProductDetail} />
-//             {/* <Route path="/product/detail/:id" component ={CreateReview}/> */}
-//           </div>
-//         </BrowserRouter>
-//       </AuthContext.Provider>
-//     );
-//   }
-// }
-
-// export default App;
 
 import React from "react";
 import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
@@ -81,6 +17,8 @@ import axios from "axios";
 export const LoginContext = React.createContext();
 
 class App extends React.Component {
+
+  
   reset = async (e) => {
     e.preventDefault();
 

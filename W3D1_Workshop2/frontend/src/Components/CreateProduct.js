@@ -19,13 +19,41 @@ export class CreateProduct extends Component {
      
 
     saveBtnHandler =()=>{
-        axios.post('/products/',this.state.product)
+        if((this.nameValidator(this.state.product.name)) &&
+        this.priceValidator(this.state.product.price)){
+             axios.post('/products/',this.state.product)
         .then(res=>{
              console.log(res)
              this.props.history.push('/all-product')
         })
+        }
+       
     }
+    nameValidator(name){
+        if(name.length > 4){
+            return true 
+        }else{
+            alert('name must grater than 4 char')
+            return false
+        }
+    }
+
+    priceValidator(price){
+        if(isNaN(price)){
+            alert('Please enter a number')
+            return false
+        }else{
+            if(price > 1 && price < 100){
+                return true 
+            }else{
+                alert('price must between 1 to 100')
+                return false
     
+            }
+     
+        }
+        
+    }
 
     render() {
         return (
